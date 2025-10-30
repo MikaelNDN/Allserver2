@@ -1,25 +1,29 @@
-// src/main.jsx (CORRIGIDO)
+// src/main.jsx (CORRIGIDO E COMPLETO)
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
-import './index.css'; // <-- 1. GARANTA QUE ESTE É O SEU CSS "BONITO"
-
-// 2. IMPORTE O CHAKRA
 import { ChakraProvider } from '@chakra-ui/react';
-
-// Importa NOSSOS provedores de contexto
 import { AuthProvider } from './context/AuthContext.jsx';
-import { CartProvider } from './context/CartContext.jsx'; 
+import { CartProvider } from './context/CartContext.jsx';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <AuthProvider>
-      <CartProvider>
-        {/* 3. ADICIONE O CHAKRA PROVIDER */}
-        <ChakraProvider> 
-          <App />
-        </ChakraProvider>
-      </CartProvider>
-    </AuthProvider>
-  </React.StrictMode>,
+// 1. Importa o roteador principal (que define as páginas)
+import AppRouter from './pages/AppRouter.jsx'; 
+
+// 2. Importa o seu CSS (o App.css não é necessário se não o estiver a usar)
+import './index.css'; 
+
+const rootElement = document.getElementById('root');
+const root = ReactDOM.createRoot(rootElement);
+
+root.render(
+  <React.StrictMode>
+    {/* 3. Envolve toda a aplicação com os Provedores */}
+    <ChakraProvider>
+      <AuthProvider>
+        <CartProvider>
+          {/* 4. Renderiza o AppRouter, não o App.jsx */}
+          <AppRouter />
+        </CartProvider>
+      </AuthProvider>
+    </ChakraProvider>
+  </React.StrictMode>
 );

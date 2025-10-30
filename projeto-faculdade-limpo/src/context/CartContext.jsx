@@ -1,5 +1,3 @@
-// src/context/CartContext.jsx
-
 import { createContext, useContext, useState } from 'react';
 import { useToast } from '@chakra-ui/react';
 
@@ -10,7 +8,6 @@ export function CartProvider({ children }) {
   const toast = useToast();
 
   const addToCart = (bartender) => {
-    // Verifica se o bartender já está no carrinho
     if (cart.find(item => item.id === bartender.id)) {
       toast({
         title: "Item já está no carrinho.",

@@ -1,5 +1,3 @@
-// src/pages/AppRouter.jsx  (O arquivo correto no seu projeto)
-
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './Home.jsx'; 
 import Login from './Login.jsx'; 
@@ -9,17 +7,14 @@ import ProtectedRoute from '../routes/ProtectedRoute.jsx';
 import Layout from '../components/Layout.jsx'; 
 import ForgotPassword from './ForgotPassword.jsx'; 
 
-// Importações das rotas de avaliação
 import ListaBartenders from './ListaBartenders.jsx'; 
 import AvaliarBartender from './AvaliarBartender.jsx'; 
 import PerfilBartender from './PerfilBartender.jsx'; 
 import ModerarAvaliacoes from './ModerarAvaliacoes.jsx';
 import AdminRoute from '../routes/AdminRoute.jsx'; 
 
-// Importação da rota de busca
 import BuscarBartenders from './BuscarBartenders.jsx'; 
 
-// Importações das rotas de pagamento 
 import Checkout from './Checkout.jsx'; 
 import PaymentSuccess from './PaymentSuccess.jsx'; 
 import HistoricoPagamentos from './HistoricoPagamentos.jsx'; 
@@ -53,7 +48,7 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
-      // Rotas de Avaliação
+     
       {
         path: 'bartenders',
         element: (
@@ -88,7 +83,7 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
-      // Rota de Busca
+      
       {
         path: 'buscar',
         element: (
@@ -97,7 +92,7 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
-      // Rotas de Pagamento 
+      
       {
         path: 'checkout',
         element: (

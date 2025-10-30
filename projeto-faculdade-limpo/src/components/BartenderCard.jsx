@@ -1,5 +1,3 @@
-// src/components/BartenderCard.jsx
-
 import {
   Box, Image, Text, Badge, VStack, HStack, Icon, Button,
   Link as ChakraLink, Heading, ButtonGroup,

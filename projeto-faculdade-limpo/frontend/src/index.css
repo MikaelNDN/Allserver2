@@ -1,3 +1,6 @@
+/* ============================================= */
+/* VARIÁVEIS GLOBAIS E RESET                     */
+/* ============================================= */
 :root {
   --cor-primaria: #C49A3D;
   --cor-primaria-hover: #a87f2c;
@@ -19,7 +22,7 @@
 body {
   background: var(--cor-fundo);
   color: var(--cor-texto-principal);
-  padding-top: 85px; 
+  padding-top: 85px; /* Espaço para o header fixo */
 }
 
 a {
@@ -27,6 +30,9 @@ a {
   color: inherit;
 }
 
+/* ============================================= */
+/* HEADER / BARRA DE NAVEGAÇÃO                   */
+/* ============================================= */
 .barra-navegacao {
   width: 100%;
   padding: 20px 60px;
@@ -52,20 +58,27 @@ a {
 .icones-acao i { cursor: pointer; font-size: 18px; transition: color 0.3s ease; }
 .icones-acao a:hover i { color: var(--cor-primaria); }
 
-
+/* ============================================= */
+/* SEÇÃO HERO (PÁGINA INICIAL)                   */
+/* ============================================= */
 .secao-apresentacao { height: calc(100vh - 85px); min-height: 500px; background: url('/img/fundo.png') no-repeat center center/cover; display: flex; align-items: center; justify-content: center; }
 .conteudo-sobreposto { background: rgba(255, 255, 255, 0.9); padding: 40px; border-radius: 10px; max-width: 600px; text-align: center; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); }
 .texto-boas-vindas { font-size: 14px; margin-bottom: 10px; }
 .secao-apresentacao h1 { font-size: 32px; color: var(--cor-primaria); font-weight: bold; margin-bottom: 15px; }
 .subtitulo { font-size: 16px; margin-bottom: 25px; line-height: 1.5; }
 
-
+/* ============================================= */
+/* BOTÕES GERAIS                                 */
+/* ============================================= */
 .botao-principal, .botao-secundario { border-radius: 8px; padding: 12px 24px; font-size: 16px; font-weight: bold; cursor: pointer; transition: all 0.3s ease-in-out; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: none; display: inline-block; text-align: center; }
 .botao-principal { background: var(--cor-primaria); color: var(--cor-fundo); }
 .botao-principal:hover { background: var(--cor-primaria-hover); transform: scale(1.05); color: var(--cor-fundo); }
 .botao-secundario { border: 2px solid var(--cor-primaria); background: transparent; color: var(--cor-primaria); }
 .botao-secundario:hover { background: var(--cor-primaria); color: var(--cor-fundo); transform: scale(1.05); }
 
+/* ============================================= */
+/* SEÇÃO SERVIÇOS (PÁGINA INICIAL)               */
+/* ============================================= */
 .servicos { text-align: center; padding: 80px 20px; background: #fff; }
 .servicos h2 { font-size: 28px; font-weight: bold; margin-bottom: 10px; }
 .servicos .descricao { font-size: 16px; margin-bottom: 50px; }
@@ -75,6 +88,9 @@ a {
 .card h3 { padding: 20px; font-size: 18px; font-weight: bold; }
 .card:hover { transform: translateY(-10px); }
 
+/* ============================================= */
+/* MODAL DETALHE SERVIÇO                         */
+/* ============================================= */
 .detalhe-servico { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); display: flex; justify-content: center; align-items: center; z-index: 1000; opacity: 1; visibility: visible; transition: opacity 0.3s ease, visibility 0.3s ease; }
 .detalhe-servico.oculto { opacity: 0; visibility: hidden; }
 .detalhe-conteudo { background-color: #fff; display: flex; gap: 2rem; align-items: center; padding: 2.5rem; border-radius: 20px; max-width: 900px; width: 90%; box-shadow: 0 0 20px rgba(0,0,0,0.2); transform: scale(1); transition: transform 0.3s ease; }
@@ -84,7 +100,9 @@ a {
 .detalhe-conteudo .texto h2 { color: var(--cor-texto-escuro); font-size: 32px; margin: 10px 0 15px 0; }
 .detalhe-conteudo .texto p { color: #333; line-height: 1.6; margin-bottom: 25px; }
 
-
+/* ============================================= */
+/* SEÇÃO PROFISSIONAIS (HOME & PÁGINA)           */
+/* ============================================= */
 .profissionais { padding: 80px 40px; background: #fafafa; }
 .profissionais h2 { text-align: center; font-size: 28px; font-weight: bold; margin-bottom: 40px; }
 .lista-profissionais { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
@@ -93,15 +111,14 @@ a {
   text-decoration: none;
   color: inherit;
   display: block;
-  max-width: 300px; 
-  margin-left: auto;  
-  margin-right: auto;
-}
+  max-width: 300px; /* Largura máxima do card */
+  margin-left: auto;  /* Inicia a centralização */
+  margin-right: auto; /* Completa a centralização */
 
-@media (min-width: 600px) { /* Começa a aplicar a partir de 600px de largura */
-  .card-link{
-  margin-left: 0;   /* Remove a margem esquerda automática */
-  margin-right: 0;  /* Remove a margem direita automática */
+  /* Media Query CORRIGIDA */
+  @media (min-width: 600px) { /* Começa a aplicar a partir de 600px de largura */
+    margin-left: 0;   /* Remove a margem esquerda automática */
+    margin-right: 0;  /* Remove a margem direita automática */
   }
 }
 
@@ -119,7 +136,9 @@ a {
 .preco { font-weight: bold; color: var(--cor-texto-escuro); }
 .btn-centro { text-align: center; margin-top: 40px; }
 
-
+/* ============================================= */
+/* FOOTER                                        */
+/* ============================================= */
 .footer { background: var(--cor-footer); padding: 60px 40px; font-size: 14px; line-height: 1.6; }
 .footer-container { display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
 .footer-col { flex: 1 1 200px; margin: 15px; min-width: 180px; }
@@ -135,7 +154,9 @@ a {
 .footer form button { background: var(--cor-primaria); border: none; font-weight: bold; cursor: pointer; color: #fff; padding: 8px 15px; border-radius: 4px; transition: background-color 0.3s ease; }
 .footer form button:hover { background: var(--cor-primaria-hover); }
 
-
+/* ============================================= */
+/* ESTILOS DE PÁGINAS GENÉRICAS (ADICIONADOS)    */
+/* ============================================= */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 .pagina-banner { background: url('/img/fundo.png') no-repeat center center/cover; padding: 60px 0; text-align: center; color: var(--cor-texto-escuro); margin-bottom: 0; }
 .pagina-banner h1 { font-size: 42px; font-weight: bold; background-color: rgba(255, 255, 255, 0.5); display: inline-block; padding: 10px 30px; border-radius: 10px; }
@@ -145,13 +166,17 @@ a {
 .filtro-btn { color: var(--cor-texto-escuro); font-weight: 600; font-size: 16px; text-decoration: none; }
 .filtro-btn i { margin-right: 8px; }
 
-
+/* ============================================= */
+/* ESTILOS DA BARRA DE BUSCA (ADICIONADOS)       */
+/* ============================================= */
 .barra-ferramentas .container.search-container { display: flex; justify-content: center; align-items: center; }
 .search-input { padding: 12px 20px; border: 1px solid #d4c19a; border-radius: 25px; font-size: 16px; width: 100%; max-width: 500px; outline: none; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
 .search-input:focus { border-color: var(--cor-primaria); box-shadow: 0 0 5px rgba(196, 154, 61, 0.3); }
 .nenhum-resultado { grid-column: 1 / -1; text-align: center; padding: 40px 20px; color: #777; font-size: 1.1em; }
 
-
+/* ============================================= */
+/* ESTILOS DA PAGINAÇÃO (ATUALIZADO PARA BOTÕES) */
+/* ============================================= */
 .paginacao { margin-top: 50px; }
 .paginacao ul { display: flex; justify-content: center; list-style: none; padding: 0; gap: 5px; }
 .paginacao button { display: block; padding: 10px 16px; min-width: 40px; color: var(--cor-texto-escuro); background-color: #f3ebd7; border-radius: 8px; border: none; font-weight: 600; cursor: pointer; transition: all 0.3s ease; margin: 0; }
@@ -159,7 +184,9 @@ a {
 .paginacao button.ativa { background-color: var(--cor-primaria); color: #fff; cursor: default; }
 .paginacao button:disabled { background-color: #e9e4d9; color: #aaa; cursor: not-allowed; }
 
-
+/* ============================================= */
+/* ESTILOS DA PÁGINA DE PERFIL (ADICIONADOS)     */
+/* ============================================= */
 .container-perfil { max-width: 1100px; margin: 40px auto; padding: 20px; }
 .perfil-principal { display: grid; grid-template-columns: 1fr; gap: 30px; margin-bottom: 40px; }
 @media (min-width: 768px) { .perfil-principal { grid-template-columns: 350px 1fr; gap: 50px; margin-bottom: 60px; } }
@@ -196,6 +223,9 @@ a {
 .info-extra a { color: #333; margin: 0 5px; font-size: 16px; transition: color 0.3s ease; }
 .info-extra a:hover { color: var(--cor-primaria); }
 
+/* ============================================= */
+/* ESTILOS DA PÁGINA DO CARRINHO (ADICIONADOS)   */
+/* ============================================= */
 .carrinho-container { display: grid; grid-template-columns: 1fr; gap: 30px; max-width: 1200px; margin: 0 auto; padding: 20px; }
 @media (min-width: 992px) { .carrinho-container { grid-template-columns: 2fr 1fr; gap: 40px; } }
 .carrinho-itens { background-color: #fff; }
@@ -229,7 +259,9 @@ a {
 .botao-contratar { display: block; width: 100%; padding: 15px; background-color: transparent; border: 2px solid var(--cor-primaria); color: var(--cor-primaria); border-radius: 8px; text-align: center; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 30px; transition: all 0.3s ease; text-decoration: none; }
 .botao-contratar:hover { background-color: var(--cor-primaria); color: #fff; }
 
-
+/* ============================================= */
+/* ESTILOS PÁGINA PERFIL USUÁRIO (ADICIONADOS)   */
+/* ============================================= */
 .perfil-usuario-container { display: grid; grid-template-columns: 1fr; gap: 30px; align-items: start; }
 @media (min-width: 992px) { .perfil-usuario-container { grid-template-columns: 280px 1fr; gap: 40px; } }
 .perfil-nav { background-color: #fcfbf9; border: 1px solid #f3ebd7; border-radius: 12px; padding: 20px; }
@@ -259,12 +291,14 @@ a {
 .status.concluido { background-color: #e0f3e9; color: #1e8555; }
 .status.agendado { background-color: #dbe9f9; color: #3b82f6; }
 
-
-@media (max-width: 991px) { 
+/* ============================================= */
+/* RESPONSIVIDADE GERAL                          */
+/* ============================================= */
+@media (max-width: 991px) { /* Ajustes para tablets */
     .carrinho-container, .perfil-usuario-container { gap: 20px; }
 }
 
-@media (max-width: 767px) { 
+@media (max-width: 767px) { /* Ajustes para mobile */
   .barra-navegacao { flex-direction: column; padding: 15px; position: static; }
   body { padding-top: 0; }
   .menu-principal { margin-top: 10px; text-align: center;}
